@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition-all">
+    <div class="container mx-auto p-6">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold">📚 Free YouTube Courses</h1>
+            
+        </div>
+
+        <!-- Search & Category -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+            <input type="text" id="search" placeholder="Search Courses..." class="w-full p-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white" onkeyup="fetchCourses()">
+            <select id="category" onchange="fetchCourses()" class="p-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white">
+                <option value="programming tutorials">💻 Programming</option>
+                <option value="web development">🌐 Web Development</option>
+                <option value="design tutorials">🎨 Design</option>
+                <option value="data science">📊 Data Science</option>
+                <option value="cyber security">🔒 Cyber Security</option>
+                <option value="artificial intelligence">🤖 AI & Machine Learning</option>
+                <option value="business and marketing">📈 Business & Marketing</option>
+                <option value="mobile app development">📱 Mobile App Development</option>
+                <option value="networking and security">🌍 Networking & Security</option>
+            </select>
+        </div>
+
+        <!-- All Courses -->
+        <h2 class="text-2xl font-semibold mt-10 mb-4">📖 All Courses</h2>
+        <div id="courses" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-6">
+            <button id="loadMore" onclick="loadMoreCourses()" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Load More</button>
+        </div>
+
+        <!-- Favorite Courses -->
+        <h2 class="text-2xl font-semibold mt-10 mb-4">⭐ Favorite Courses</h2>
+        <div id="favorites" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
